@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="WebView Maintainers">
+  <link rel="canonical" href="https://webview.dev/bindings/cpp/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>C++ - Webview</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "C++";
+    var mkdocs_page_input_path = "bindings/cpp.md";
+    var mkdocs_page_url = "/bindings/cpp/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Webview</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Bindings</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">C++</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#webviewwebview">webview::webview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webviewset_title">webview::set_title</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webviewset_size">webview::set_size</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webviewnavigate">webview::navigate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webviewrun">webview::run</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../c/">C</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../go.md">Go</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../rust.md">Rust</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../nim.md">Nim</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../deno.md">Deno</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../java.md">Java</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../csharp.md">C Sharp</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../python.md">Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../crystal.md">Crystal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../haskell.md">Haskell</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../janet.md">Janet</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../../about/contributing.md">Contributing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/license/">License</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Webview</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Bindings &raquo;</li>
+        
+      
+    
+    <li>C++</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="api">API</h1>
+<h3 id="webviewwebview">webview::webview</h3>
+<pre><code>webview(bool debug = false, void *wnd = nullptr)
+</code></pre>
+<h3 id="webviewset_title">webview::set_title</h3>
+<pre><code>void set_title(const std::string title)
+</code></pre>
+<h3 id="webviewset_size">webview::set_size</h3>
+<pre><code>void set_size(int width, int height, int hints)
+</code></pre>
+<h3 id="webviewnavigate">webview::navigate</h3>
+<pre><code>void navigate(const std::string url)
+</code></pre>
+<h3 id="webviewrun">webview::run</h3>
+<pre><code>void run()
+</code></pre>
+<h1 id="compiling">Compiling</h1>
+<h3 id="linux">Linux</h3>
+<pre><code>c++ main.cc `pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.0` -o webview-example
+</code></pre>
+<h3 id="macos">MacOS</h3>
+<pre><code>c++ main.cc -std=c++11 -framework WebKit -o webview-example
+</code></pre>
+<h3 id="windows-x64">Windows (x64)</h3>
+<p>The <code>webview.exe</code> file will be in the build directory.  </p>
+<pre><code>script/build.bat
+</code></pre>
+<h1 id="examples">Examples</h1>
+<p>Hello World:</p>
+<pre><code>#include &quot;webview.h&quot;
+int main() {
+  webview::webview w(true, nullptr);
+  w.set_title(&quot;Minimal example&quot;);
+  w.set_size(480, 320, WEBVIEW_HINT_NONE);
+  w.navigate(&quot;https://en.m.wikipedia.org/wiki/Main_Page&quot;);
+  w.run();
+  return 0;
+}
+</code></pre>
+<p>Complex Example:</p>
+<pre><code>#include &quot;webview.h&quot;
+#include &lt;iostream&gt;
+
+int main() {
+  webview::webview w(true, nullptr);
+  w.set_title(&quot;Example&quot;);
+  w.set_size(480, 320, WEBVIEW_HINT_NONE);
+  w.set_size(180, 120, WEBVIEW_HINT_MIN);
+  w.bind(&quot;noop&quot;, [](std::string s) -&gt; std::string {
+    std::cout &lt;&lt; s &lt;&lt; std::endl;
+    return s;
+  });
+  w.bind(&quot;add&quot;, [](std::string s) -&gt; std::string {
+    auto a = std::stoi(webview::json_parse(s, &quot;&quot;, 0));
+    auto b = std::stoi(webview::json_parse(s, &quot;&quot;, 1));
+    return std::to_string(a + b);
+  });
+  w.navigate(R&quot;V0G0N(data:text/html,
+    &lt;!doctype html&gt;
+    &lt;html&gt;
+      &lt;body&gt;hello&lt;/body&gt;
+      &lt;script&gt;
+        window.onload = function() {
+          document.body.innerText = `hello, ${navigator.userAgent}`;
+          noop('hello').then(function(res) {
+            console.log('noop res', res);
+          });
+          add(1, 2).then(function(res) {
+            console.log('add res', res);
+          });
+        };
+      &lt;/script&gt;
+    &lt;/html&gt;
+  )V0G0N&quot;);
+  w.run();
+  return 0;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../c/" class="btn btn-neutral float-right" title="C">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/webview/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href="../c/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
